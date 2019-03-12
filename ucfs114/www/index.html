@@ -71,7 +71,12 @@
 	<style type="text/css">
 	#mapid{height:500px;}
 	</style>
+	<
+	
   </head>
+  
+  
+  
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
@@ -146,6 +151,11 @@
 	<script src="js/leaflet.js"></script>
 	<script src="js/leafletFunction.js"></script>
 	<script>
+	// load the earthquake data
+	document.addEventListener('DOMContentLoaded', function() {
+	getEarthquakes();
+	}, false);
+	</script>
 
 	
   </body>
