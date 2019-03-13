@@ -99,6 +99,7 @@
             <li class="mdl-menu__item"><a href="simpleMapGeoJSON.html">About</a></li>
             <li class="mdl-menu__item" onclick="addUCLLogo()">Contact</li>
             <li class="mdl-menu__item" onclick="menuClicked()">Div Change</li>
+			<li class="mdl-menu__item" onclick="trackLocation();return false;">userTracking</li>
           </ul>
         </div>
       </header>
@@ -150,6 +151,7 @@
     <script src="js/rhMenu.js"></script>
 	<script src="js/leaflet.js"></script>
 	<script src="js/leafletFunction.js"></script>
+	<script src="js/userTracking.js"></script>
 	<script>
 	// load the earthquake data
 	document.addEventListener('DOMContentLoaded', function() {
