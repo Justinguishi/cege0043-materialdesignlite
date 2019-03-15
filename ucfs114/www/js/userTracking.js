@@ -15,13 +15,9 @@ var userMarker;
 		}
 		userMarker=L.marker([position.coords.latitude,position.coords.longitude])
 		.addTo(mymap).bindPopup("<b>You were here</b>");
-		getDistance();
-		mymap.setView([position.coords.latitude,position.coords.longitude],13)
+
+		//mymap.setView([position.coords.latitude,position.coords.longitude],13)
 		
 		}
 		
-	function getDistance() 
-{
-	//alert('getting distance');
-	navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePoints);
-}
+	
