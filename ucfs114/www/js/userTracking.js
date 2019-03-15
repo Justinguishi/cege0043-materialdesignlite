@@ -10,10 +10,10 @@ var userMarker;
 
 
 	function showPosition(position){
-		if (userMarker){
+		if(userMarker){
 			mymap.removeLayer(userMarker);
 		}
-		userMarker=L.marker([position.coords.latitude,position.coords.longtitude])
+		userMarker=L.marker([position.coords.latitude,position.coords.longitude])
 		.addTo(mymap).bindPopup("<b>You were here</b>");
 		getDistance();
 		mymap.setView([position.coords.latitude,position.coords.longitude],13)
