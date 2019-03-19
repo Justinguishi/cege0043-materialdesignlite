@@ -1,4 +1,5 @@
 var userMarker;	
+
 	
 	function trackLocation() {
 		if (navigator.geolocation) {
@@ -16,6 +17,7 @@ var userMarker;
 		userMarker=L.marker([position.coords.latitude,position.coords.longitude])
 		.addTo(mymap).bindPopup("<b>You are here</b>");	
 		getDistance();
+		mymap.setView([position.coords.latitude,position.coords.longitude],13)
 		}
 	
 	function getDistance() {
@@ -31,9 +33,32 @@ var userMarker;
 		var lng = -0.13818;
 		// return the distance in kilometers
 		var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');
-		if (distance<0.1) {alert('UCL is arriving!');}
+		if (distance<1) {alert('UCL is arriving!');}
 		}
 		// code adapted from https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-inyour-web-apps.html
+	
+	
+	
+	
+	function getDistanceFromMultiplePoints(position) {
+		var minDistance = 100000000000;
+		var closestQuake = "";
+		for(var i = 0; i < earthquakes.features.length; i++) {
+		var obj = earthquakes.features[i];
+		var distance = calculateDistance(position.coords.latitude,
+		position.coords.longitude,obj.geometry.coordinates[0], obj.geometry.coordinates[1], 'K');
+		if (distance < minDistance){
+		minDistance = distance;
+		closestQuake = obj.properties.place;
+		}
+		}
+		alert("Earthquake: " + closestQuake + " is distance " + minDistance + "away");
+		}
+
+	
+	
+	
+	
 		
 	function calculateDistance(lat1, lon1, lat2, lon2, unit) {
 		var radlat1 = Math.PI * lat1/180;
@@ -51,6 +76,8 @@ var userMarker;
 		return dist;
 		}
 
+		
+		
 
 
 
