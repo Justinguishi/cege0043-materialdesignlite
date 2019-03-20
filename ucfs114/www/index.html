@@ -17,6 +17,7 @@
 -->
 <html lang="en">
   <head>
+    <script src="https://www.w3schools.com/lib/w3.js"></script> 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
@@ -146,7 +147,9 @@
 
             <div id="mapid" style="width: 600px; height: 400px;"></div>
 			
-			<div id="ajaxtext" style="width: 1600px; height: 20px;"></div>
+			<div id="ajaxtext" style="width: 1600px; height: 20px;">
+			<div w3-include-html="createForm.html"></div> 
+			</div>
 
           </div>
 		  </div>
@@ -163,6 +166,8 @@
 	<script src="js/startup.js"></script>
 	<script src="js/utilities.js"></script>
 	<script src="js/AJAX.js"></script>
+	<script src="js/uploadData.js"></script> 
+
 	<script>startup();</script>
 
 </body>
