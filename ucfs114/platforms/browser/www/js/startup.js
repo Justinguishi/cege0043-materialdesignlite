@@ -35,8 +35,11 @@ var earthquakes;
 		[position.coords.latitude-0.0005,position.coords.longitude+0.0005]
 		],{color:'red',fillColor:"#f03",fillOpacity:0.05}).addTo(mymap).bindPopup('I am a polygon');
 	
-		getEarthquakes();
+		getEarthquakes();loadW3HTML();
 		}
+
+	function loadW3HTML() { 
+		w3.includeHTML(); }
 
 
 	function startup(){
