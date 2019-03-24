@@ -3,14 +3,14 @@ var userMarker;
 	
 	function trackLocation() {
 		if (navigator.geolocation) {
-		navigator.geolocation.watchPosition(showPosition);
+		navigator.geolocation.watchPosition(showPosition1);
 		} else {
 		document.getElementById('showLocation').innerHTML = "Geolocation is not supported by this browser.";
 		}
 		}
 
 
-	function showPosition(position){
+	function showPosition1(position){
 		if(userMarker){
 			mymap.removeLayer(userMarker);
 		}
@@ -23,7 +23,7 @@ var userMarker;
 	function getDistance() {
 		alert('getting distance');
 		// getDistanceFromPoint is the function called once the distance has been found 
-		navigator.geolocation.getCurrentPosition(getDistanceFromPoint);
+		navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePoints);
 		}
 
 	function getDistanceFromPoint(position) {
